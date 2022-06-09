@@ -1,3 +1,4 @@
+// Require the packages
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
@@ -11,7 +12,7 @@ app.use(express.json());
 
 app.use(express.static('public'));
 
-
+// Get
 app.get('/api/notes', (req, res) => {
   fs.readFile('./db/db.json', 'utf8', (err, data) => {
     if (err) throw err;
@@ -24,7 +25,7 @@ app.get('/notes', (req, res) => {
   console.log(path.join(__dirname, '/public/notes.html'));
   res.sendFile(path.join(__dirname, '/public/notes.html'));
 });
-
+// Create unique ID and post
 app.post('/api/notes', (req, res) => {
   fs.readFile('./db/db.json', 'utf8', (err, data) => {
     if (err) throw err;
@@ -39,7 +40,7 @@ app.post('/api/notes', (req, res) => {
   })
   })
 })
-
+// Delete function
 app.delete('/api/notes/:id', (req, res) => {
   fs.readFile('./db/db.json', 'utf8', (err, data) => {
     if (err) throw err;
@@ -55,19 +56,9 @@ app.delete('/api/notes/:id', (req, res) => {
   })
 })
 
-// Enter the note,
-// throw the note into db.json
+
 app.listen(PORT, () => {
   console.log(`App at http://localhost:${PORT}`);
 });
 
 
-
-// fetch - done post data
-
-// make a routes that does the foolowing
-
-// 1. add id to the note
-// 2. read the note
-// 3. update the read notes
-// 4. write the notes back to db.json
