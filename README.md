@@ -1,9 +1,5 @@
 # Server-Note
 
-# 11 Express.js: Note Taker
-
-# Server-Note
-
 Author: Nathan Stein
 
 # About
