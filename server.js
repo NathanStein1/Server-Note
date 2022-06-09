@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 const app = express();
 const {v4:uuidv4} = require('uuid');
 // Sets up the Express app to handle data parsing
